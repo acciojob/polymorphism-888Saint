@@ -4,7 +4,7 @@ package com.driver;
 public class Main {
 
     // Product class
-    public static class Product {
+    class Product {
         // Method 1: Two integer parameters
         public int product(int x, int y) {
             return x * y;
@@ -24,7 +24,8 @@ public class Main {
     // Main function to execute the program
     public static void main(String[] args) {
         // Task 2: Create an object of the Product class
-        Product p = new Product(); // Create instance of Product
+        Main outer = new Main(); // Create instance of outer class Main to access inner class
+        Product p = outer.new Product(); // Create instance of Product
 
         // Task 3: Call the first method
         int result1 = p.product(2, 3);
